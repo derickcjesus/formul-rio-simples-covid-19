@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(/img/image.jpg);
+}
+
+.titulo h1 {
+    text-align: center;
+    color: #e5e5e5;
+} 
+
+label {
+    color: white;
+}
+
+#cNome {
+    width: 95%;
+}
+
+#cIdade {
+    width: 37%;
+}
+
+#cTel {
+   width: 70%; 
+}
+
+.btn-lg {
+    position: relative;
+    left: 45%;
+    top: 70px;
+}

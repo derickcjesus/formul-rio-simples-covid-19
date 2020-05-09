@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Formulario coronavírus</title>
+
+        <script>
+
+            function verificarSintomas(){
+
+                var nome = document.getElementById("cNome").value;
+
+                var tosse = document.getElementsByName("rNameInput1");
+                var febre = document.getElementsByName("rNameInput2");
+                var dif_respirar = document.getElementsByName("rNameInput3");
+
+                if(tosse[0].checked && febre[0].checked && dif_respirar[0].checked){
+                    alert(nome + ", você apresenta os sintomas do coronavírus. Porém este formulário é simples, caso precise de alguma orientação médica, ligue 163")
+                }else if(tosse[1].checked && febre[1].checked && dif_respirar[0].checked){
+                    alert(nome + ", você apresenta os sintomas do coronavírus. Porém este formulário é simples, caso precise de alguma orientação médica, ligue 163")
+                }else if(tosse[1].checked && febre[1].checked && dif_respirar[1].checked){
+                    alert(nome + ", você não apresenta os sintomas do coronavírus, mas continue tomando os cuidados necessários, como lavar bem as mãos e usar máscara")
+                }else if(tosse[0].checked && febre[0].checked && dif_respirar[1].checked){
+                    alert(nome + ", você não apresenta os sintomas do coronavírus, mas continue tomando os cuidados necessários, como lavar bem as mãos e usar máscara")
+                }else if(tosse[0].checked && febre[1].checked && dif_respirar[0].checked){
+                    alert(nome + ", você apresenta os sintomas do coronavírus. Porém este formulário é simples, caso precise de alguma orientação médica, ligue 163")
+                }else if(tosse[1].checked && febre[0].checked && dif_respirar[0].checked){
+                    alert(nome + ", você apresenta os sintomas do coronavírus. Porém este formulário é simples, caso precise de alguma orientação médica, ligue 163")
+                }else if(tosse[0].checked && febre[1].checked && dif_respirar[1].checked){
+                    alert(nome + ", você não apresenta os sintomas do coronavírus, mas continue tomando os cuidados necessários, como lavar bem as mãos e usar máscara")
+                }else if(tosse[1].checked && febre[0].checked && dif_respirar[1].checked){
+                    alert(nome + ", você não apresenta os sintomas do coronavírus, mas continue tomando os cuidados necessários, como lavar bem as mãos e usar máscara")
+                }
+
+            }
+
+        </script>
+
+    </head>
+
+    <body> 
+
+        <div class="titulo">
+            <h1>Formulário para diagnóstico do coronavírus covid-19</h1>
+        </div>
+
+        <div class="navegation">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                <a class="nav-link active" href="https://coronavirus.saude.gov.br/sobre-a-doenca#o-que-e-covid" target="_blank">O que é coronavírus?</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://coronavirus.saude.gov.br/sobre-a-doenca#sintomas" target="_blank">Quais são os sintomas?</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://coronavirus.saude.gov.br/sobre-a-doenca#transmissao" target="_blank">Como se transmite?</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://coronavirus.saude.gov.br/sobre-a-doenca#como-se-proteger" target="_blank">Como se proteger?</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <form id="form">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="cNome">Nome: </label>
+                        <input id="cNome" name="tNome" type="text" class="form-control" placeholder="Digite seu nome"  />
+                    </div>  
+                    <div class="form-group col-md-4">
+                        <label for="cTel">Telefone: </label>
+                        <input id="cTel" name="tTel" type="number" class="form-control" maxlength="11" placeholder="Digite seu telefone"/>
+                    </div> 
+                    <div class="form-group col-md-2">
+                        <label for="cIdade">Idade: </label>
+                        <input id="cIdade" name="tIdade" type="number" class="form-control" min="1" max="130" placeholder="Informe sua idade"/>
+                    </div>
+                </div>
+
+                    <label for="customRadioInline1">Sexo:</label><br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="rMasc" name="rMasc" class="custom-control-input">
+                        <label class="custom-control-label" for="rMasc">Masculino</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="rFemi" name="rFemi" class="custom-control-input">
+                        <label class="custom-control-label" for="rFemi">Feminino</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="rOutro" name="rOutro" class="custom-control-input">
+                        <label class="custom-control-label" for="rOutro">Outro</label>
+                    </div>
+
+                    <br>
+                    <br>
+
+                    <div class="form-row">
+                        <label>Você está sentindo tosse seca?</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rNameInput1" id="rInputSim1" value="option1" >
+                        <label class="form-check-label" for="rInputSim1">
+                          Sim
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rNameInput1" id="rInputNao2" value="option2">
+                        <label class="form-check-label" for="rInputNao2">
+                          Não
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>Você está sentindo febre (acima de 37,8 ºC)?</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rNameInput2" id="rInputSim3" value="option3" >
+                        <label class="form-check-label" for="rInputSim3">
+                          Sim
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rNameInput2" id="rInput4" value="option4">
+                        <label class="form-check-label" for="rInputNao4">
+                          Não
+                        </label>
+                      </div>
+
+                      <div class="form-row">
+                        <label>Você está sentindo dificuldade para respirar?</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rNameInput3" id="rInputSim5" value="option5" >
+                        <label class="form-check-label" for="rInputSim5">
+                          Sim
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rNameInput3" id="rInputNao6" value="option6">
+                        <label class="form-check-label" for="rInputNao6">
+                          Não
+                        </label>
+                    </div>
+
+                    <div class="botao">
+                        <button type="button" class="btn btn-secondary btn-lg" onclick="verificarSintomas()">Verificar</button>
+                    </div>
+            </form>
+        </div>
+       
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
